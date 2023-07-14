@@ -13,7 +13,7 @@ app.use(express.json());
 app.use("/api-tacos", rutas); 
 
 // PARA SERVIR LOS ARCHIVOS ESTATICOS EN ESTA DIRECCION 
-app.use("/public", express.static(`${__dirname}/imgs `))
+app.use("/public", express.static(`${__dirname}/imgs`))
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(()=> console.log("Conexion a la base de datos exitosa!!"))
