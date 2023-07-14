@@ -20,6 +20,6 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((err) => console.log(err)); 
 
 app.listen(port, ()=>{
-    console.log("Servidor corriendo en el puerto " ,port);
+    console.log("Servidor corriendo en el puerto: " ,port);
 })
 
