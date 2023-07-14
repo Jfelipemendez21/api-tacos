@@ -15,9 +15,9 @@ app.use("/api-tacos", rutas);
 // PARA SERVIR LOS ARCHIVOS ESTATICOS EN ESTA DIRECCION 
 app.use("/public", express.static(`${__dirname}/imgs`))
 
-mongoose.connect(process.env.MONGODB_URI)
-    .then(()=> console.log("Conexion a la base de datos exitosa!!"))
-    .catch((err)=> console.log("Error al intentar conectar con la base de datos" ,err));
+mongoose.connect(process.env.MONGO_URI)
+    .then(()=> console.log("Conexion a base de datos exitosa!"))
+    .catch((err) => console.log(err)); 
 
 app.listen(port, ()=>{
     console.log("Servidor corriendo en el puerto " ,port);
