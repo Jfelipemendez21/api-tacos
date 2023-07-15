@@ -15,11 +15,11 @@ app.use("/api-tacos", rutas);
 // PARA SERVIR LOS ARCHIVOS ESTATICOS EN ESTA DIRECCION 
 app.use("/public", express.static(`${__dirname}/imgs`))
 
-mongoose.connect("mongodb+srv://jfelipemendez:pipe7410487@cluster0.qsbgqaq.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGO_URI)
     .then(()=> console.log("Conexion a base de datos exitosa!"))
     .catch((err) => console.log(err)); 
 
 app.listen(port, ()=>{
-    console.log("Servidor corriendo en el puerto:" ,port);
+    console.log("Servidor corriendo en el puerto: " ,port);
 })
 
