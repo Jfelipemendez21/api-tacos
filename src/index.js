@@ -2,13 +2,14 @@ const express= require("express");
 const mongoose= require("mongoose");
 require("dotenv").config(); 
 const rutas= require("./routes/rutas");
+const cors= require("cors")
 
 const app= express(); 
 const port = process.env.PORT || 4200; 
 
 
 app.use(express.json()); 
-
+app.use(cors());
 
 app.use("/api-tacos", rutas); 
 
