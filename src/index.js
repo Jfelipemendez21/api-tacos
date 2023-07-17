@@ -7,12 +7,11 @@ const rutas= require("./routes/rutas");
 const app= express(); 
 const port = process.env.PORT || 4200; 
 
-
-app.use(express.json()); 
 app.use(cors({
     origin: '*'
 }));
 
+app.use(express.json()); 
 app.use("/api-tacos", rutas); 
 
 // PARA SERVIR LOS ARCHIVOS ESTATICOS EN ESTA DIRECCION 
